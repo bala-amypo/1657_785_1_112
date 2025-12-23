@@ -1,6 +1,8 @@
-package com.example.demo.service;
-import com.example.demo.entity.VerificationRequest;
+package com.example.demo.repository;
+
+import com.example.demo.entity.VerificationRule;
 import org.springframework.data.jpa.repository.JpaRepository;
-public interface VerificationRuleService extends JpaRepository<VerificationRequest, Long> {
-    
+
+public interface VerificationRuleRepository
+        extends JpaRepository<VerificationRule, Long> {
 }
