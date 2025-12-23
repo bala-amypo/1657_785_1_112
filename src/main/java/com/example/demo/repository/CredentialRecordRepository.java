@@ -11,5 +11,6 @@ import java.util.List;
 public interface CredentialRecordRepository
         extends JpaRepository<CredentialRecord, Long> {
 
-    List<CredentialRecord> findByHolder_Id(Long holderId);
+    List<CredentialRecord> findByHolderId(Long holderId);
+    CredentailRecord findByCredentialCode(Long id);
 }
