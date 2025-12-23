@@ -10,6 +10,7 @@ public class CredentialRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long holderId;   // ✅ MUST exist
     private String credentialCode;
     private String status;
     private LocalDate expiryDate;
@@ -21,3 +22,4 @@ public class CredentialRecord {
 
     public void setStatus(String status) { this.status = status; }
 }
+
