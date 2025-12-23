@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.AuditTrailRecord;
+
 public interface AuditTrailService {
-    void record(String message);
+    void logEvent(AuditTrailRecord record);
 }

@@ -6,6 +6,8 @@ import com.example.demo.repository.CredentialRecordRepository;
 import com.example.demo.service.CredentialRecordService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CredentialRecordServiceImpl implements CredentialRecordService {
 
@@ -16,20 +18,35 @@ public class CredentialRecordServiceImpl implements CredentialRecordService {
     }
 
     @Override
-    public CredentialRecord approveCredential(Long id) {
-        CredentialRecord record = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Credential not found"));
-
-        record.setStatus("APPROVED");
+    public CredentialRecord createCredential(CredentialRecord record) {
+        if (record.getStatus() == null) {
+            record.setStatus("VALID");
+        }
         return repository.save(record);
     }
 
     @Override
-    public CredentialRecord rejectCredential(Long id) {
-        CredentialRecord record = repository.findById(id)
+    public CredentialRecord updateCredential(Long id, CredentialRecord updated) {
+        CredentialRecord existing = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Credential not found"));
 
-        record.setStatus("REJECTED");
-        return repository.save(record);
+        existing.setStatus(updated.getStatus());
+        return repository.save(existing);
+    }
+
+    @Override
+    public List<CredentialRecord> getCredentialsByHolder(Long holderId) {
+        return repository.findByHolderId(holderId);
+    }
+
+    @Override
+    public CredentialRecord getCredentialByCode(String code) {
+        return repository.findByCredentialCode(code)
+                .orElseThrow(() -> new ResourceNotFoundException("Credential not found"));
+    }
+
+    @Override
+    public List<CredentialRecord> getAllCredentials() {
+        return repository.findAll();
     }
 }
