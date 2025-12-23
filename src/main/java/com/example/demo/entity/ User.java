@@ -20,5 +20,6 @@ public class User {
     private String role = "VIEWER";
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    // getters & setters
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 }

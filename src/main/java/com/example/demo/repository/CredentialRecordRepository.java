@@ -3,9 +3,10 @@ package com.example.demo.repository;
 import com.example.demo.entity.CredentialRecord;
 import org.springframework.data.jpa.repository.*;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.*;
 
-public interface CredentialRecordRepository extends JpaRepository<CredentialRecord, Long> {
+public interface CredentialRecordRepository
+        extends JpaRepository<CredentialRecord, Long> {
 
     List<CredentialRecord> findExpiredBefore(LocalDate date);
 
@@ -16,6 +17,5 @@ public interface CredentialRecordRepository extends JpaRepository<CredentialReco
     List<CredentialRecord> searchByIssuerAndType(String issuer, String type);
 
     List<CredentialRecord> findByHolderId(Long holderId);
-
-    CredentialRecord findByCredentialCode(String code);
+    Optional<CredentialRecord> findByCredentialCode(String code);
 }
