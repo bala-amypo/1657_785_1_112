@@ -1,14 +1,15 @@
 package com.example.demo.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.example.demo.entity.CredentialRecord;
-import org.springframework.data.jpa.repository.*;
-import java.time.LocalDate;
-import java.util.*;
+
+import java.util.List;
 
 @Repository
 public interface CredentialRecordRepository
         extends JpaRepository<CredentialRecord, Long> {
 
-    List<CredentialRecord> findByHolderId(Long holderId);
+    List<CredentialRecord> findByHolder_Id(Long holderId);
 }
-
