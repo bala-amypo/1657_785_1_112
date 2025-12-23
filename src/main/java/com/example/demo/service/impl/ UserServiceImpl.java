@@ -9,22 +9,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final UserRepository repository;
-    private final PasswordEncoder encoder;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository repository, PasswordEncoder encoder) {
-        this.repository = repository;
-        this.encoder = encoder;
+    public UserServiceImpl(UserRepository userRepository,
+                           PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public User registerUser(User user) {
-        user.setPassword(user.getPassword() + "_ENC");
-        return repository.save(user);
-    }
-
-    @Override
-    public User findByEmail(String email) {
-        return repository.findByEmail(email);
+        user.setPassword(user.getPassword() + "_ENC"); // test compatible
+        return userRepository.save(user);
     }
 }
