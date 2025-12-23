@@ -16,3 +16,4 @@ public class OpenApiConfig {
                         .version("1.0"));
     }
 }
+package com.example.demo.config;import io.swagger.v3.oas.models.OpenAPI;import io.swagger.v3.oas.models.info.Info;import org.springframework.context.annotation.Bean;import org.springframework.context.annotation.Configuration;@Configurationpublic class OpenApiConfig {    @Bean    public OpenAPI openAPI() {        return new OpenAPI()                .info(new Info()                        .title("Digital Credential Verification Engine")                        .version("1.0"));    }}
