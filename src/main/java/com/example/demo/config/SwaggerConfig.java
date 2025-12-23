@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-public Class Swaggerconfig {
+public class SwaggerConfig {
 
     @Bean
     public OpenAPI customOpenAPI() {
@@ -16,5 +16,5 @@ public Class Swaggerconfig {
                 .servers(List.of(
                         new Server().url("https://9182.pro604cr.amypo.ai/")
                 ));
-        }
+    }
 }
