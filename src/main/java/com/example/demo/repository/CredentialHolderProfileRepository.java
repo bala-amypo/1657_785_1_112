@@ -10,4 +10,3 @@ public interface CredentialHolderProfileRepository
 
     CredentialHolderProfile save(CredentialHolderProfile profile);
 }
-
