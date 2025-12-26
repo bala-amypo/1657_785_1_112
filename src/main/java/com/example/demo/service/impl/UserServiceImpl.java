@@ -1,25 +1,21 @@
-package com.example.demo.service.impl;
+package com.example.demo.service;
 
 import com.example.demo.entity.User;
-import com.example.demo.repository.UserRepository;
-import com.example.demo.service.UserService;
+import com.example.demo.repo.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
     private final UserRepository repo;
     private final PasswordEncoder encoder;
 
-    public UserServiceImpl(UserRepository repo, PasswordEncoder encoder) {
-        this.repo = repo;
-        this.encoder = encoder;
-    }
-
     @Override
-    public User registerUser(User user) {
-        user.setPassword(user.getPassword() + "_ENC");
+    public User register(User user) {
+        user.setPassword(encoder.encode(user.getPassword()));
         return repo.save(user);
     }
 }
