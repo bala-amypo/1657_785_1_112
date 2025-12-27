@@ -17,3 +17,4 @@ public interface AuditTrailService {
     AuditTrailRecord logEvent(AuditTrailRecord record);
     List<AuditTrailRecord> getLogsByCredential(Long credentialId);
 }
+-
