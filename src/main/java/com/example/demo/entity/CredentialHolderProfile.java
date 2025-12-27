@@ -1,4 +1,3 @@
-
 package com.example.demo.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -94,4 +93,3 @@ public class CredentialHolderProfile {
         this.createdAt = createdAt;
     }
 }
-
