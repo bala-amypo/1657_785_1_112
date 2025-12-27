@@ -51,5 +51,3 @@ public class CredentialRecordController {
         return ResponseEntity.ok(service.getAllCredentials());
     }
 }
-
-
