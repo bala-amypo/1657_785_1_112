@@ -1,21 +1,51 @@
+// package com.example.demo.service.impl;
+
+// import com.example.demo.entity.AuditTrailRecord;
+// import com.example.demo.exception.ResourceNotFoundException;
+// import com.example.demo.repository.AuditTrailRecordRepository;
+// import com.example.demo.service.AuditTrailService;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.stereotype.Service;
+
+// import java.util.List;
+
+// @Service
+// public class AuditTrailServiceImpl implements AuditTrailService {
+
+//     @Autowired
+//     private AuditTrailRecordRepository repository;
+
+//     @Override
+//     public AuditTrailRecord saveRecord(AuditTrailRecord record) {
+//         return repository.save(record);
+//     }
+
+//     @Override
+//     public List<AuditTrailRecord> getAllRecords() {
+//         return repository.findAll();
+//     }
+
+//     @Override
+//     public AuditTrailRecord getRecordById(Long id) {
+//         return repository.findById(id)
+//                 .orElseThrow(() -> new ResourceNotFoundException("Audit record not found with id " + id));
+//     }
+// }
 package com.example.demo.service.impl;
-
-import java.time.LocalDateTime;
-import java.util.List;
-
-import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.AuditTrailRecord;
 import com.example.demo.repository.AuditTrailRecordRepository;
 import com.example.demo.service.AuditTrailService;
 
-@Service
+import java.time.LocalDateTime;
+import java.util.List;
+
 public class AuditTrailServiceImpl implements AuditTrailService {
 
-    private final AuditTrailRecordRepository auditRepo;
+    private final AuditTrailRecordRepository repo;
 
-    public AuditTrailServiceImpl(AuditTrailRecordRepository auditRepo) {
-        this.auditRepo = auditRepo;
+    public AuditTrailServiceImpl(AuditTrailRecordRepository repo) {
+        this.repo = repo;
     }
 
     @Override
@@ -23,17 +53,11 @@ public class AuditTrailServiceImpl implements AuditTrailService {
         if (record.getLoggedAt() == null) {
             record.setLoggedAt(LocalDateTime.now());
         }
-        return auditRepo.save(record);
+        return repo.save(record);
     }
 
     @Override
     public List<AuditTrailRecord> getLogsByCredential(Long credentialId) {
-        return auditRepo.findByCredentialId(credentialId);
-    }
-
-    // ⭐ REQUIRED METHOD (THIS FIXES THE ERROR)
-    @Override
-    public List<AuditTrailRecord> getAllLogs() {
-        return auditRepo.findAll();
+        return repo.findByCredentialId(credentialId);
     }
 }
