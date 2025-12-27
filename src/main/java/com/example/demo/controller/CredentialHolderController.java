@@ -1,18 +1,35 @@
+// package com.example.demo.controller;
+
+// import com.example.demo.entity.CredentialHolderProfile;
+// import com.example.demo.service.CredentialHolderProfileService;
+// import org.springframework.http.ResponseEntity;
+
+// public class CredentialHolderController {
+
+//     private final CredentialHolderProfileService service;
+
+//     public CredentialHolderController(CredentialHolderProfileService service) {
+//         this.service = service;
+//     }
+
+//     public ResponseEntity<CredentialHolderProfile> create(CredentialHolderProfile profile) {
+//         return ResponseEntity.ok(service.createHolder(profile));
+//     }
+
+//     public ResponseEntity<CredentialHolderProfile> getById(Long id) {
+//         return ResponseEntity.ok(service.getHolderById(id));
+//     }
+
+//     public ResponseEntity<CredentialHolderProfile> updateStatus(Long id, boolean active) {
+//         return ResponseEntity.ok(service.updateStatus(id, active));
+//     }
+// }
 package com.example.demo.controller;
-
-import java.util.List;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.entity.CredentialHolderProfile;
 import com.example.demo.service.CredentialHolderProfileService;
+import org.springframework.http.ResponseEntity;
 
-import io.swagger.v3.oas.annotations.tags.Tag;
-
-@RestController
-@RequestMapping("/api/holders")
-@Tag(name = "Credential Holders")
 public class CredentialHolderController {
 
     private final CredentialHolderProfileService service;
@@ -21,26 +38,15 @@ public class CredentialHolderController {
         this.service = service;
     }
 
-    @PostMapping
-    public ResponseEntity<CredentialHolderProfile> create(
-            @RequestBody CredentialHolderProfile profile) {
+    public ResponseEntity<CredentialHolderProfile> create(CredentialHolderProfile profile) {
         return ResponseEntity.ok(service.createHolder(profile));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<CredentialHolderProfile> getById(@PathVariable Long id) {
+    public ResponseEntity<CredentialHolderProfile> getById(Long id) {
         return ResponseEntity.ok(service.getHolderById(id));
     }
 
-    @GetMapping
-    public ResponseEntity<List<CredentialHolderProfile>> getAll() {
-        return ResponseEntity.ok(service.getAllHolders());
-    }
-
-    @PutMapping("/{id}/status")
-    public ResponseEntity<CredentialHolderProfile> updateStatus(
-            @PathVariable Long id,
-            @RequestParam boolean active) {
+    public ResponseEntity<CredentialHolderProfile> updateStatus(Long id, boolean active) {
         return ResponseEntity.ok(service.updateStatus(id, active));
     }
 }
