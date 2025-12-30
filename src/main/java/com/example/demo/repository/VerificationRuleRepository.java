@@ -17,7 +17,7 @@ import com.example.demo.entity.VerificationRule;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-
+import com.example.demo.entity.VerificationRule;
 @Repository
 public interface VerificationRuleRepository extends JpaRepository<VerificationRule,Long>{
     VerificationRule save(VerificationRule rule);
