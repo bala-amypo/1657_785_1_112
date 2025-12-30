@@ -4,7 +4,8 @@ import com.example.demo.entity.AuditTrailRecord;
 import com.example.demo.service.AuditTrailService;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
-import org.springframework.stereotype.RestController;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
 public class AuditTrailController {
 

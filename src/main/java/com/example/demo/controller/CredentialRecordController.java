@@ -5,7 +5,8 @@ import com.example.demo.service.CredentialRecordService;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
-import org.springframework.stereotype.RestController;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
 public class CredentialRecordController {
 

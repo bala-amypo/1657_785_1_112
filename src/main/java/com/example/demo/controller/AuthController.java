@@ -42,8 +42,8 @@ import com.example.demo.security.JwtUtil;
 import com.example.demo.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.*;
+import org.springframework.web.bind.annotation.RestController;
 
-import org.springframework.stereotype.RestController;
 @RestController
 public class AuthController {
 
