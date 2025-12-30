@@ -5,7 +5,8 @@ import com.example.demo.repository.VerificationRuleRepository;
 import com.example.demo.service.VerificationRuleService;
 
 import java.util.List;
-
+import org.springframework.stereotype.Service;
+@Service
 public class VerificationRuleServiceImpl implements VerificationRuleService {
 
     private final VerificationRuleRepository ruleRepo;

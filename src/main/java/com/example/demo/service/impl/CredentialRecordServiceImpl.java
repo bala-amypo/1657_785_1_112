@@ -6,7 +6,8 @@ import com.example.demo.service.CredentialRecordService;
 
 import java.time.LocalDate;
 import java.util.List;
-
+import org.springframework.stereotype.Service;
+@Service
 public class CredentialRecordServiceImpl implements CredentialRecordService {
 
     private final CredentialRecordRepository credentialRepo;
