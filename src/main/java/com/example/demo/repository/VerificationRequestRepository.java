@@ -15,7 +15,9 @@ package com.example.demo.repository;
 
 import com.example.demo.entity.VerificationRequest;
 import java.util.*;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface VerificationRequestRepository {
     VerificationRequest save(VerificationRequest request);
     Optional<VerificationRequest> findById(Long id);

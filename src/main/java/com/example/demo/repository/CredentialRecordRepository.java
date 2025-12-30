@@ -26,7 +26,9 @@ package com.example.demo.repository;
 import com.example.demo.entity.CredentialRecord;
 import java.time.LocalDate;
 import java.util.*;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CredentialRecordRepository {
 
     CredentialRecord save(CredentialRecord record);
