@@ -39,7 +39,8 @@ import com.example.demo.service.AuditTrailService;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+import org.springframework.stereotype.Service;
+@Service
 public class AuditTrailServiceImpl implements AuditTrailService {
 
     private final AuditTrailRecordRepository repo;
