@@ -36,7 +36,8 @@ package com.example.demo.controller;
 import com.example.demo.entity.VerificationRule;
 import com.example.demo.service.VerificationRuleService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.RestController;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
 public class VerificationRuleController {
 

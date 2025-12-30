@@ -36,7 +36,9 @@ package com.example.demo.controller;
 import com.example.demo.entity.VerificationRequest;
 import com.example.demo.service.VerificationRequestService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class VerificationRequestController {
 
     private final VerificationRequestService service;
