@@ -28,9 +28,9 @@ import java.time.LocalDate;
 import java.util.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-
+import com.example.demo.entity.CredentialRecord,;
 @Repository
-public interface CredentialRecordRepository extends JpaRepository<,Long> {
+public interface CredentialRecordRepository extends JpaRepository<CredentialRecord,Long> {
 
     CredentialRecord save(CredentialRecord record);
 

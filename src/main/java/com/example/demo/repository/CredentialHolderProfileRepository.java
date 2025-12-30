@@ -13,7 +13,7 @@ import com.example.demo.entity.CredentialHolderProfile;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-
+import com.example.demo.entity.CredentialHolderProfile;
 @Repository
 public interface CredentialHolderProfileRepository  extends JpaRepository<CredentialHolderProfile,Long>  {
     Optional<CredentialHolderProfile> findById(Long id);

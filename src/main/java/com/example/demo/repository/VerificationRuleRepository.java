@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface VerificationRuleRepository {
+public interface VerificationRuleRepository extends JpaRepository<VerificationRule,Long>{
     VerificationRule save(VerificationRule rule);
     List<VerificationRule> findByActiveTrue();
 }

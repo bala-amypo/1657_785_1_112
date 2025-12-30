@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface VerificationRequestRepository {
+public interface VerificationRequestRepository extends JpaRepository<VerificationRequest,Long>{
     VerificationRequest save(VerificationRequest request);
     Optional<VerificationRequest> findById(Long id);
     List<VerificationRequest> findByCredentialId(Long credentialId);
