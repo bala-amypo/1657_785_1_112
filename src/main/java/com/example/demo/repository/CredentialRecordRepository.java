@@ -30,7 +30,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface CredentialRecordRepository {
+public interface CredentialRecordRepository extends JpaRepository<,Long> {
 
     CredentialRecord save(CredentialRecord record);
 

@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface CredentialHolderProfileRepository {
+public interface CredentialHolderProfileRepository  extends JpaRepository<CredentialHolderProfile,Long>  {
     Optional<CredentialHolderProfile> findById(Long id);
     CredentialHolderProfile save(CredentialHolderProfile profile);
 }
