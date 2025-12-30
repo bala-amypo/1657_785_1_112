@@ -29,7 +29,8 @@ package com.example.demo.controller;
 import com.example.demo.entity.CredentialHolderProfile;
 import com.example.demo.service.CredentialHolderProfileService;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.stereotype.RestController;
+@RestController
 public class CredentialHolderController {
 
     private final CredentialHolderProfileService service;

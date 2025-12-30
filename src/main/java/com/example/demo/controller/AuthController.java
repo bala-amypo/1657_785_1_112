@@ -43,6 +43,8 @@ import com.example.demo.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.*;
 
+import org.springframework.stereotype.RestController;
+@RestController
 public class AuthController {
 
     private final UserService userService;
